@@ -8,7 +8,8 @@ Instructions:
 2. In the GenieACS user interface, to to Admin->Virtual Parameters, and make new Virtual Parameters with names and contents that match those .js files in the Virtual Parameters folder, but omit the .js extension. Some files need modification/customization for your environment - please read the comments for each!
 3. To tell GenieACS to pull the virtual parameters hourly, edit the GenieACS Provision called "default" and add the following lines at or near the end:
 ```// Refresh Virtual Parameters
-declare("VirtualParameters.*", {path: hourly, value: hourly});```
+declare("VirtualParameters.*", {path: hourly, value: hourly});
+```
 4. Under Admin->Config, edit the index page and device page to display fields from Sonar as desired.
 5. If you use PPPoE, if desired, create a provision to change the device's PPPoE username and password based on the one pulled from Sonar. An example is provided below:
 ```let sonarRadiusUsername = declare(
@@ -23,6 +24,7 @@ if (sonarRadiusUsername != "" && sonarRadiusPassword != "") {
    declare("Device.PPP.Interface.1.Password", null, {value: sonarRadiusPassword});
    // Adjust PeriodicInformInterval to from 30 seconds to 5m after PPPoE credentials are set
    declare("Device.ManagementServer.PeriodicInformInterval", null, {value: 300});
-}```
+}
+```
 
 You will also need a preset to specify the conditions under which this provision should be triggered. The contents of the preset will depend on your other setup in GenieACS.
