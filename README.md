@@ -1,4 +1,4 @@
-# GenieACS-Sonar-Integration
+# GenieACS Sonar Integration
 Integration for GenieACS to pull info from Sonar (v1) instance, for GenieACS 1.2.5 and later
 
 This integration is designed for MikroTik devices, scripts will need modification for other devices.
